@@ -1,8 +1,0 @@
-== Welcome to Rails
-
-2012-12-12: 
-1,创建xmims；
-2,使用devise，登陆验证；
-3,使用cancan进行权限验证；
-
-
