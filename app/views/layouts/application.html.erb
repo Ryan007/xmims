@@ -10,9 +10,30 @@
   <!-- JQuery engine script-->
   <script type="text/javascript" src="<%= Xmims::Application.config.staticfile_server_url %>jquery/jquery_1.7.1.min.js"></script>
   <script type="text/javascript" src="<%= Xmims::Application.config.staticfile_server_url %>jquery/fullcalendar/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="<%= Xmims::Application.config.staticfile_server_url %>"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Start #header-status -->
+<div id="header-status">
+    <div class="container_12">
+        <div class="grid_8">
+            <% if user_signed_in? %>
+            您好,<%= current_user.username %>
+            <% else %>
+            <%= link_to "[登录]", new_user_session_path, :method => :get %> |
+            <%= link_to "[注册]", "/users/sign_up", :method => :get %>
+            <% end %>
+        </div>
+        <div class="grid_4">
+          <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete ,:id => "logout"%>
+            <% end %>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div> 
+<!-- End #header-status -->
 <!-- devise的提示信息 start -->
  
     <% if flash[:notice] %>
@@ -28,26 +49,7 @@
     <p class="success"><%= flash[:success] %></p>
     <% end %>
 <!-- devise的提示信息 end -->
-    <!-- Start #header-status -->
-    <div id="header-status">
-        <div class="container_12">
-            <div class="grid_8">
-                <% if user_signed_in? %>
-                您好,<%= current_user.username %>
-                <% else %>
-                <%= link_to "[登录]", new_user_session_path, :method => :get %> |
-                <%= link_to "[注册]", "/users/sign_up", :method => :get %>
-                <% end %>
-            </div>
-            <div class="grid_4">
-              <% if user_signed_in? %>
-              <%= link_to "Logout", destroy_user_session_path, :method => :delete ,:id => "logout"%>
-                <% end %>
-            </div>
-        </div>
-        <div style="clear:both;"></div>
-    </div> 
-    <!-- End #header-status -->
+
 
 <%= yield %>
 

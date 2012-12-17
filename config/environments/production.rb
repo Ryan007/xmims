@@ -75,7 +75,7 @@ Xmims::Application.configure do
     :port                 => 25,
     :domain               => 'www.xiaoma.com',
     :user_name            => 'noreply@xiaoma.com',
-    :password             => 'ashdauisdqib',
+    :password             => '1q2w3e4r',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end

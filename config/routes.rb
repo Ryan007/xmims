@@ -1,8 +1,10 @@
 Xmims::Application.routes.draw do
   
+  root :to => 'home#index'
+  
   # 用户系统devise 重写了注册组件
   devise_for :users, :controllers => {:registrations => "registrations"} 
-   
+  
   devise_scope :user do
     # 等待邮箱验证
     match "awaiting_confirmation", :to => "registrations#awaiting_confirmation", :via => [:get], :as => "awaiting_confirmation"
@@ -61,7 +63,7 @@ Xmims::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  
 
   # See how all your routes lay out with "rake routes"
 

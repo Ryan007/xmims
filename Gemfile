@@ -19,9 +19,11 @@ gem 'libv8', '~> 3.11.8'
 gem 'therubyracer'
  
 gem 'devise'
+
+gem 'devise-encryptable'
  
 gem "will_paginate"
- 
+  
 gem 'acts-as-taggable-on', '~> 2.2.2'
  
 # Gems used only for assets and not required
@@ -49,6 +51,8 @@ group :test do
   gem 'turn', :require => false
   gem "factory_girl_rails"
   gem "minitest"
+  gem 'launchy'
+  gem 'email_spec'
 end
  
 # To use ActiveModel has_secure_password
@@ -63,7 +67,9 @@ end
 # Deploy with Capistrano
 group :development do
   gem 'capistrano'
+  gem 'rvm-capistrano'
 end
  
+gem 'passenger'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

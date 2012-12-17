@@ -1,5 +1,5 @@
-<p>Welcome <%= @resource.email %>!</p>
+<p>欢迎您 <%= @resource.username %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>您可以通过点击下面的链接来验证您的邮箱,并完成注册:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to '现在就完成在inc.tools.xiaoma.com的验证,请点击此链接', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
